@@ -1,3 +1,10 @@
+
+.include {
+  width: 0pt;
+  display: inline;
+  margin: 0pt;
+}
+
 .keynote {
   background-color: #d9edf7;
 }
