@@ -85,9 +85,12 @@ h3, h4, h5, h6 {
   color: #333333;
   font-size: 130%;
 }
-a {
-  color: #115E67;
+a, a:active, a:hover, a:focus {
+  /* color: #115E67; */
+  color: #2a6496;
 }
+
+
 footer {
   background: #D6D2C4;
   border-top: 1px dotted #BFB8AF;
