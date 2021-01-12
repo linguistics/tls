@@ -3,6 +3,28 @@ body {
   font-size: 14pt;
 }
 
+/* BUTTONS */
+
+.btn {
+  border-radius: 3mm;
+  font-size: 100%;
+}
+
+.btn-primary, .btn-primary:visited {
+  color: #ffffff;
+  background-color: #005f86;
+  text-decoration: none;
+  border: 0px;
+  padding: 2.5mm;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #333f48;
+}
+
+
+
+
 .include {
   width: 0pt;
   display: inline;
