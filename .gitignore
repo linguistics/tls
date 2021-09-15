@@ -1,7 +1,4 @@
-.DS_Store
-._.DS_Store
-*.aux
-*.log
-*.out
-*.blg
-*.bbl
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
