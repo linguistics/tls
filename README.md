@@ -7,7 +7,7 @@ The site itself lives here: **[tls.ling.utexas.edu](https://tls.ling.utexas.edu/
 ## Checklist for changing from 2021 to 2022
 
 * Create a new folder with the name `2021`.
-* Copy all the files that are specific to the homepage and the 2021 conference (e.g. [`/index.html`](/index.html), [`/style/`](/style/), and [`/files/`](/files/), but **not** [`/1997/`](/1997/) or [`CNAME`](CNAME)) into [`/2021/`](/2021/). (The site is now archived at [tls.ling.utexas.edu/2022/](https://tls.ling.utexas.edu/2021/).)
+* Copy all the files that are specific to the homepage and the 2021 conference (e.g. [`/index.html`](/index.html), [`/style/`](/style/), and [`/files/`](/files/), but **not** [`/1997/`](/1997/) or [`CNAME`](CNAME)) into [`/2021/`](/2021/). (The site is now archived at [tls.ling.utexas.edu/2021/](https://tls.ling.utexas.edu/2021/).)
 * Add an entry for 2021 in [`_data/archive.yml`](_data/archive.yml), using previous years as a model. (Now the [site archive page](https://tls.ling.utexas.edu/archive/) will contain an appropriate link.)
 * Now you can edit [`/index.html`](/index.html) to reflect the 2022 conference. (Start by changing the year information in the preamble & removing last year's schedule, etc.)
 
