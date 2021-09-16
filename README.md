@@ -1,18 +1,49 @@
 # Texas Linguistics Society (TLS)
 
-This repository contains the source code (HTML/JavaScript/CSS) to generate the TLS website,
-as well as any published proceedings documents (PDF).
+This repository contains the source code to generate the TLS website.
 
-If you simply want to visit the live site, please go to **<http://tls.ling.utexas.edu>**
+The site itself lives here: **[tls.ling.utexas.edu](https://tls.ling.utexas.edu/)**
+
+## Checklist for changing from 2021 to 2022
+
+* Create a new folder with the name `2021`.
+* Copy all the files that are specific to the homepage and the 2021 conference (e.g. [`/index.html`](/index.html), [`/style/`](/style/), and [`/files/`](/files/), but **not** [`/1997/`](/1997/) or [`CNAME`](CNAME)) into [`/2021/`](/2021/). (The site is now archived at [tls.ling.utexas.edu/2022/](https://tls.ling.utexas.edu/2021/).)
+* Add an entry for 2021 in [`_data/archive.yml`](_data/archive.yml), using previous years as a model. (Now the [site archive page](tls.ling.utexas.edu/archive/) will contain an appropriate link.)
+* Now you can edit [`/index.html`](/index.html) to reflect the 2022 conference. (Start by changing the year information in the preamble & removing last year's schedule, etc.)
 
 
-## Websites, Servers, and GitHub Pages
+## Basics: HTML, Jekyll, and GitHub
+
+The site is built using `.html` files, which contain the text you see on each page. The formatting of the text is controled by `.css` files (look in the [`/style/`](/style/) folder). You can learn about HTML and CSS from [Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css). The HTML/CSS for recent TLS sites uses the Bootstrap framework. If you want to play around with it you could [check out the documentation](https://getbootstrap.com/docs/4.0/getting-started/introduction/).
+
+The site also uses a tool called Jekyll to make a few things easier. For example, Jekyll looks at the preamble of [`/index.html`](/index.html) to find the year that the page is talking about. Jekyll also builds the [site archive page](tls.ling.utexas.edu/archive/) automatically using information from [`/_data/archive.yml`](/_data/archive.yml). If you want to edit the files on your own computer, you'll need to install Jekyll to test them locally. But GitHub Pages knows how to do it too. [Check out the Jekyll documentation](https://jekyllrb.com/docs/) to learn more about it.
+
+GitHub Pages takes the HTML and, using Jekyll, turns it into a live site at [tls.ling.utexas.edu](https://tls.ling.utexas.edu/). GitHub also keeps a memory of what changes are made to the site. Once again, you can check out the documentation for both [GitHub](https://docs.github.com/en/github) and [GitHub Pages](https://docs.github.com/en/pages).
+
+
+## Guide to files and folders
+
+* [`/404/`](/404/): Creates the 404 error page if someone goes a page on the website that doesn't exist, e.g. [tls.ling.utexas.edu/asdfs/](https://tls.ling.utexas.edu/asdfs/). (Jekyll is responsible for this.)
+* [`/1997/`](/1997/), ['/1998/'](/1998/), etc.: Each of these folders contains an archived site from a previous year. Each folder is completely self-contained.
+* [`/archive/`](/archive/): Contains a page that lists each of the previous conferences, with a link to the appropriate archived folder. You can adjust the formating within this folder, but the information is automatically pulled from [`/_data/archive.yml`](/_data/archive.yml)
+* [`/_data/`](/_data/): Jekyll can read data files from this folder to automatically generate repetitive information, for example see the for and if statements in [`/archive/index.html`](/archive/index.html).
+* [`/files/`](/files/): Stores any PDFs or other files relevant to the current year's conference. (Most likely the schedule; make sure it goes into the archive folder!)
+* [`/style/`](/style/): Contains the CSS and JavaScript and image files to style this year's homepage at [`/index.html`](/index.html). (Make sure it goes into the archive folder!)
+* [`CNAME`](CNAME): A GitHub Pages configuration file that links this repository to `tls.ling.utexas.edu`. UT ITS controls allocation of all `*.utexas.edu` domains, so if any issues arise with that DNS entry, your best bet is to search for "UTnic" on the [utexas.edu](https://www.utexas.edu/) website or file a ticket with the IT folks.
+* [`/_config.yml`](/_config.yml): Configures Jekyll.
+* [`/Gemfile`](/Gemfile): Gives GitHub Pages some information about how to use Jekyll.
+* [`/index.html`](/index.html): Contains the text and markup for this year's homepage. This will configure what people see when they look at [tls.ling.utexas.edu](https://tls.ling.utexas.edu/). Make sure it goes into the archive folder!)
+* [`/README.md`](/README.md): Contains this text that you're reading now!
+
+
+
+## Deeper Details: Websites, Servers, and GitHub Pages
 
 #### How websites work
 
 To host a webpage on the internet, a server (computer) must be online and available to respond to incoming requests, at any time, as long as you want the webpage to exist.
 
-For example, when you go to the URL <http://tls.ling.utexas.edu/2016tls/>, your browser first looks up the address of the server that is responsible for the domain `tls.ling.utexas.edu`, then it connects to that server, and requests the server to send it the page content corresponding to `/2016tls/`.
+For example, when you go to the URL [tls.ling.utexas.edu/2016/](https://tls.ling.utexas.edu/2016/), your browser first looks up the address of the server that is responsible for the domain `tls.ling.utexas.edu`, then it connects to that server, and requests the server to send it the page content corresponding to `/2016/`.
 The server, which has been configured to listen for just such a request, finds the data that it has been programmed to associate with that particular request, and sends that data back to your browser.
 Depending on the content of that data, your browser may send out additional requests, potentially to other servers,
 to retrieve other components of your webpage, such as images.
@@ -67,45 +98,3 @@ In short, despite the advertisement aspect and indeterminate continuation of the
 I've concluded that it's the best option for hosting the TLS website for as long as possible with minimal ongoing costs.
 
 
-## History
-
-The site was originally hosted on a UT server at `http://uts.cc.utexas.edu/~tls`,
-but that server was retired (without announcement) in Summer 2016,
-so `tls.ling.utexas.edu` is now both the canonical and only URL.
-
-
-## Archival remarks on legacy directories
-
-`97tls`, `98tls`, and `99tls` weren't exactly named with an optimist outlook for the conference, but that's okay, it was a common mistake back then.
-
-But `tls2009`? There's no excuse. Still, we'll retain a link for backward compatibility.
-
-To be clear, the pattern you should follow for new conferences is <code><b>YEAR</b>tls/</code>.
-Honestly, yes, I agree that the trailing "tls" is redundant — that only the year would be cleaner and just as clear.
-But see [xkcd #927](https://xkcd.com/927/).
-
-
-## Administrative notes
-
-`tls.ling.utexas.edu` is a CNAME record (a DNS entry that aliases one domain name to another, rather than from one domain to an IP address, like A records do) that points to `linguistics.github.io`.
-Thanks to the [`CNAME`](CNAME) file in this repository, GitHub knows that incoming requests with the header `Host: tls.ling.utexas.edu` should be served static files from this directory. GitHub uses Fastly to serve GitHub pages, so we get the benefit of an incredibly fast CDN (content delivery network), for free. The disadvantage is that GitHub pages only serves static files — no PHP, ASP.net, etc. But static files have much greater longevity, so in the long run, it's a healthy constraint to have.
-
-UT ITS controls allocation of all `*.utexas.edu` domains, so if any issues arise with that DNS entry, your best bet is to search for "UTnic" on the [utexas.edu](https://www.utexas.edu/) website or file a ticket with the IT folks.
-
-
-## Files
-
-* [`.nojekyll`](.nojekyll): this is just a configuration file that tells GitHub pages not to run [Jekyll](https://jekyllrb.com/) on these files.
-  Jekyll is handy in some cases, but didn't fit with the archival needs of this repository.
-  This is optional; since none of the files contain Jekyll directives, nothing would be changed in the Jekyll-rendered result, but by skipping Jekyll, you'll see changes on the live site more quickly after you do a `git push`.
-* [`archive.html`](archive.html): is a static listing of all conferences with direct links. This should probably be moved into `index.html`, after getting rid of the current `index.html` redirect.
-* [`CNAME`](CNAME): another GitHub Pages configuration file that tells to GitHub to serve requests it receives for `tls.ling.utexas.edu` with files from this directory.
-* [`index.html`](index.html): this is the file people get when they go to <http://tls.ling.utexas.edu/>.
-  It is currently configured to serve a redirect to the most recent (TLS 2016) year-specific site.
-  This is probably not the best solution. When linking to your conference you should use the full URL, but in some cases `tls.ling.utexas.edu` looks nicer, so in practice, you'll likely want to change the links in this page to the current year's site.
-
-
-## Documents
-
-* [`CONTRIBUTING.md`](CONTRIBUTING.md): Describes how to make changes to this repository; and as a result, how to add pages to the <http://tls.ling.utexas.edu/> website.
-* [`2014tls/README.md`](2014tls/README.md): Records some notes and reflections on running TLS 2014, including general advice, overly optimistic thinking, and potentially out-of-date or overly specific suggestions.
