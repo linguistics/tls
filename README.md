@@ -4,12 +4,20 @@ This repository contains the source code to generate the TLS website.
 
 The site itself lives here: **[tls.ling.utexas.edu](https://tls.ling.utexas.edu/)**
 
-## Checklist for changing from 2021 to 2022
+## Fall Checklist: changing from one year (say, 2021) to the next (2022)
 
-* Create a new folder with the name `2021`.
+* Create a new folder with the name of the year  to archive (`2021`).
 * Copy all the files that are specific to the homepage and the 2021 conference (e.g. [`/index.html`](/index.html), [`/style/`](/style/), and [`/files/`](/files/), but **not** [`/1997/`](/1997/) or [`CNAME`](CNAME)) into [`/2021/`](/2021/). (The site is now archived at [tls.ling.utexas.edu/2021/](https://tls.ling.utexas.edu/2021/).)
 * Add an entry for 2021 in [`_data/archive.yml`](_data/archive.yml), using previous years as a model. (Now the [site archive page](https://tls.ling.utexas.edu/archive/) will contain an appropriate link.)
-* Now you can edit [`/index.html`](/index.html) to reflect the 2022 conference. (Start by changing the year information in the preamble & removing last year's schedule, etc.)
+* Now you can edit [`/index.html`](/index.html) to reflect the 2022 conference.
+    * Update the year information in the preamble.
+    * Temporarily disable any navigational links (` disabled`) that should not yet be active.
+    * Update the main body paragraph and keynote speakers.
+    * Update the names of the current TLS committee members.
+* Remove the schedule from `files` in prior year.
+
+## Spring Checklist: adding schedule and registration
+TBD
 
 
 ## Basics: HTML, Jekyll, and GitHub
