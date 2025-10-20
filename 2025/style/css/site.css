@@ -1,0 +1,76 @@
+/* COLORS
+ * ut orange: #bf5700
+ * ut medium blue: #005f86
+ * ut dark grey: #333f48;
+ * ut light blue: #00a9b7
+ * ut sand: #d6d2c4
+ */
+
+body {
+  padding-top: 5rem;
+  color: #333333;
+  font-size: 13pt;
+}
+
+
+h1, h2 {
+  color: #bf5700;
+  margin-top: 2rem;
+}
+
+a, a:active, a:hover, a:focus {
+  color: #005f86;
+}
+
+/* NAV BAR */
+
+.navbar {
+  background: white;
+}
+
+.navbar a {
+  color: #bf5700;
+}
+
+.nav-link.disabled {
+  color: #d6d2c4;
+}
+
+
+/* BUTTONS */
+
+.btn {
+  border-radius: 3mm;
+  font-size: 100%;
+}
+
+.btn-primary, .btn-primary:visited {
+  color: #ffffff;
+  background-color: #005f86;
+  text-decoration: none;
+  border: 0px;
+  padding: 2.5mm;
+  margin: 2mm 0mm;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #333f48;
+}
+
+ /* box-shadow: 0 0 0 3px #005f86;*/
+
+.card-body {
+  padding: 0;
+}
+
+/* VARIOUS EMPH */
+
+.keynote-speaker {
+  font-weight: bold;
+}
+
+
+footer {
+  background: #bf5700;
+  margin-top: 40px;
+}
